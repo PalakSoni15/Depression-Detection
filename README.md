@@ -19,7 +19,7 @@
 
 5. Start the local development server:
 ``` python
-    
+    python3 main.py
 ```
 
 
