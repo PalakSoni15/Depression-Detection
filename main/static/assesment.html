@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+  <header class="text-gray-600 body-font py-2 ">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl">Depression Detection</span>
+      </a>
+      <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+        <a class="mr-5 hover:text-gray-900" href="/blog">Blogs and Posts</a>
+        <a class="mr-5 hover:text-gray-900">About the Test</a>
+      </nav>
+      <a href="/login">
+        <button class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0">Login</button>
+      </a>
+      <a href="/register">
+        <button  class="ml-4 inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0 ">Register
+        </a>
+      </button>
+    </div>
+  </header>
+
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-20">
+        <h1 class="sm:text-4xl  font-medium title-font mb-2 text-gray-900">Quality of Life</h1>
+        <p class="lg:w-4/5 mx-auto leading-relaxed text-base text-gray-700">
+            This assessment asks how you feel about your quality of life,health or other areas of your life.
+            Please answer all your questions. If you are unsure about which response to give to a question, please choose the one 
+            the appears most appropriate. This can be you first response.We ask that you think your life in the last two weeks.
+        </p><br>
+        <p class="lg:w-4/5 mx-auto leading-relaxed text-base text-gray-700">
+            Please read each question,assess your feelings, and select the number on the scale for each question that gives the best answer for you.
+        </p>
+      </div>
+      <div class="lg:w-4/5 w-full mx-auto table-auto">
+        <form class="px-4 py-3 title-font tracking-wider text-xs bg-gray-200 rounded-tl rounded-bl" 
+        action="/result" method="POST">
+          <div class="text-lg ml3 text-base text-gray-800 font-medium title-font mb-2">
+            1. How would you rate your quality of life?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class=" -check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que1" id="que1_a" value="option1_1">
+              <label class="form-check-label" for="que1_a"> Very Poor</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que1" id="que1_b" value="option1_2">
+              <label class="form-check-label" for="que1_b"> Poor</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que1" id="que1_c" value="option1_3">
+              <label class="form-check-label" for="que1_c"> Neither Poor Nor Good</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que1" id="que1_d" value="option1_4">
+              <label class="form-check-label" for="que1_d"> Good</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que1" id="que1_e" value="option1_5">
+              <label class="form-check-label" for="que1_e">Very Good</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            2. How satisfied are you with your health?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que2" id="que2_a" value="option2_1">
+              <label class="form-check-label" for="que2_a">Very Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que2" id="que2_b" value="option2_2">
+              <label class="form-check-label" for="que2_b">Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que2" id="que2_c" value="option2_3">
+              <label class="form-check-label" for="que2_c">Neither Satisfied Nor Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que2" id="que2_d" value="option2_4">
+              <label class="form-check-label" for="que2_d">Satisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que2" id="que2_e" value="option2_5">
+              <label class="form-check-label" for="que2_e">Very Satisfied</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            3. To What Extent do you feel that physical pain prevents you from doing what you need to do?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que3" id="que3_a" value="option3_1">
+              <label class="form-check-label" for="que3_a">Not at all</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que3" id="que3_b" value="option3_2">
+              <label class="form-check-label" for="que3_b">A Little</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que3" id="que3_c" value="option3_3">
+              <label class="form-check-label" for="que3_c">A Moderate Amount</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que3" id="que3_d" value="option3_4">
+              <label class="form-check-label" for="que3_d">Very Much</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que3" id="que3_e" value="option3_5">
+              <label class="form-check-label" for="que3_e">An Extreme Amount</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            4. How much do you need any medical treatment to functioning in your daily life?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que4" id="que4_a" value="option4_1">
+              <label class="form-check-label" for="que4_a">Not at all</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que4" id="que4_b" value="option4_2">
+              <label class="form-check-label" for="que4_b"> A Little</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que4" id="que4_c" value="option4_3">
+              <label class="form-check-label" for="que4_c">3. A Moderate Amount</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que4" id="que4_d" value="option4_4">
+              <label class="form-check-label" for="que4_d">4. Very Much</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que4" id="que4_e" value="option4_5">
+              <label class="form-check-label" for="que4_e">5.An Extreme Amount</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            5. How much do you enjoy life?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que5" id="que5_a" value="option5_1">
+              <label class="form-check-label" for="que5_a">1. Not at all</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que5" id="que5_b" value="option5_2">
+              <label class="form-check-label" for="que5_b">2. A Little</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que5" id="que5_c" value="option5_3">
+              <label class="form-check-label" for="que5_c">3. A Moderate Amount</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que5" id="que5_d" value="option5_4">
+              <label class="form-check-label" for="que5_d">4. Very Much</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que5" id="que5_e" value="option5_5">
+              <label class="form-check-label" for="que5_e">5.An Extreme Amount</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-md text-gray-800 font-medium title-font mb-2">
+            6. To what extent do you feel your life to be meaningful?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que6" id="que6_a" value="option6_1">
+              <label class="form-check-label" for="que6_a">1. Not at all</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que6" id="que6_b" value="option6_2">
+              <label class="form-check-label" for="que6_b">2. A Little</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que6" id="que6_c" value="option6_3">
+              <label class="form-check-label" for="que6_c">3. A Moderate Amount</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que6" id="que6_d" value="option6_4">
+              <label class="form-check-label" for="que6_d">4. Very Much</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que6" id="que6_e" value="option6_5">
+              <label class="form-check-label" for="que6_e">5.An Extreme Amount</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            7. How well are you able to concentrate?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que7" id="que7_a" value="option7_1">
+              <label class="form-check-label" for="que7_a">1. Not at all</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que7" id="que7_b" value="option7_2">
+              <label class="form-check-label" for="que7_b">2. A Little</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que7" id="que7_c" value="option7_3">
+              <label class="form-check-label" for="que7_d">3. A Moderate Amount</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que7" id="que7_d" value="option7_4">
+              <label class="form-check-label" for="que7_d">4. Very Much</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que7" id="que7_e" value="option7_5">
+              <label class="form-check-label" for="que7_e">5.An Extreme Amount</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            8. How safe do you feel in your daily life?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que8" id="que8_a" value="option8_1">
+              <label class="form-check-label" for="que8_a">1. Not at all</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que8" id="que8_b" value="option8_2">
+              <label class="form-check-label" for="que8_b">2. A Little</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que8" id="que8_c" value="option8_3">
+              <label class="form-check-label" for="que8_c">3. A Moderate Amount</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que8" id="que8_d" value="option8_4">
+              <label class="form-check-label" for="que8_d">4. Very Much</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que8" id="que8_e" value="option8_5">
+              <label class="form-check-label" for="que8_e">5.An Extreme Amount</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            9. How healthy is your physical environment?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que9" id="que9_a" value="option9_1">
+              <label class="form-check-label" for="que9_a">1. Not at all</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que9" id="que9_b" value="option9_2">
+              <label class="form-check-label" for="que9_b">2. A Little</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que9" id="que9_c" value="option9_3">
+              <label class="form-check-label" for="que9_c">3. A Moderate Amount</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que9" id="que9_d" value="option9_4">
+              <label class="form-check-label" for="que9_d">4. Very Much</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que9" id="que9_e" value="s9_5">
+              <label class="form-check-label" for="que9_e">5.An Extreme Amount</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            10. Do you have enough energy for everyday life?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que10" id="que10_a" value="option10_1">
+              <label class="form-check-label" for="que10_a">1. Not at all</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que10" id="que10_b" value="option10_2">
+              <label class="form-check-label" for="que10_b">2. A Little</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que10" id="que10_c" value="option10_3">
+              <label class="form-check-label" for="que10_c">3. A Moderately</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que10" id="que10_d" value="option10_4">
+              <label class="form-check-label" for="que10_d">4. Mostly</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que10" id="que10_e" value="option10_5">
+              <label class="form-check-label" for="que10_e">5. Completely</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            11. Are you able to accept your bodily appearance??
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que11" id="que11_a" value="option11_1">
+              <label class="form-check-label" for="que11_a">1. Not at all</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que11" id="que11_b" value="option11_2">
+              <label class="form-check-label" for="que11_b">2. A Little</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que11" id="que11_c" value="option11_3">
+              <label class="form-check-label" for="que11_c">3. A Moderately</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que11" id="que11_d" value="option11_4">
+              <label class="form-check-label" for="que11_d">4. Mostly</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que11" id="que11_e" value="option11_5">
+              <label class="form-check-label" for="que11_e">5. Completely</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            12. Have you enough money to meet your needs?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que12" id="que12_a" value="option12_1">
+              <label class="form-check-label" for="que12_a">1. Not at all</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que12" id="que12_b" value="option12_2">
+              <label class="form-check-label" for="que12_b">2. A Little</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que12" id="que12_c" value="option12_3">
+              <label class="form-check-label" for="que12_c">3. A Moderately</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que12" id="que12_d" value="option12_4">
+              <label class="form-check-label" for="que12_d">4. Mostly</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que12" id="que12_e" value="option12_5">
+              <label class="form-check-label" for="que12_e">5. Completely</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            13. How available to you is the information that you need in your day-to-day life?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que13" id="que13_a" value="option13_1">
+              <label class="form-check-label" for="que13_a">1. Not at all</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que13" id="que13_b" value="option13_2">
+              <label class="form-check-label" for="que13_b">2. A Little</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que13" id="que13_c" value="option13_3">
+              <label class="form-check-label" for="que13_c">3. A Moderately</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que13" id="que13_d" value="option13_4">
+              <label class="form-check-label" for="que13_d">4. Mostly</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que13" id="que13_e" value="option13_5">
+              <label class="form-check-label" for="que13_e">5. Completely</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            14. To what extent do you have the opportunity for leisure activities?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que14" id="que14_a" value="option14_1">
+              <label class="form-check-label" for="que14_a">1. Not at all</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que14" id="que14_b" value="option14_2">
+              <label class="form-check-label" for="que14_b">2. A Little</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que14" id="que14_c" value="option14_3">
+              <label class="form-check-label" for="que14_c">3. A Moderately</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que14" id="que14_d" value="option14_4">
+              <label class="form-check-label" for="que14_d">4. Mostly</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que14" id="que14_e" value="option14_5">
+              <label class="form-check-label" for="que14_e">5. Completely</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            15. How well are you able to get around?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que15" id="que15_a" value="option15_1">
+              <label class="form-check-label" for="que15_a">1. Not at all</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que15" id="que15_b" value="option15_2">
+              <label class="form-check-label" for="que15_b">2. A Little</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que15" id="que15_c" value="option15_3">
+              <label class="form-check-label" for="que15_c">3. A Moderately</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que15" id="que15_d" value="option15_4">
+              <label class="form-check-label" for="que15_d">4. Mostly</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que15" id="que15_e" value="option15_5">
+              <label class="form-check-label" for="que15_e">5. Completely</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            16. How satisfied are you with your sleep?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que16" id="que16_a" value="option16_1">
+              <label class="form-check-label" for="que16_a">1. Very Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que16" id="que16_b" value="option16_2">
+              <label class="form-check-label" for="que16_b">2. Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que16" id="que16_c" value="option16_3">
+              <label class="form-check-label" for="que16_c">3. Neither Satisfied Not Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que16" id="que16_d" value="option16_4">
+              <label class="form-check-label" for="que16_d">4. Satisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que16" id="que16_e" value="option16_5">
+              <label class="form-check-label" for="que16_e">5. Very Satisfied</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            17. How satisfied are you with your ability to perform your daily living activities?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que17" id="que17_a" value="option17_1">
+              <label class="form-check-label" for="que17_a">1. Very Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que17" id="que17_b" value="option17_2">
+              <label class="form-check-label" for="que17_b">2. Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que17" id="que17_c" value="option17_3">
+              <label class="form-check-label" for="que17_c">3. Neither Satisfied Not Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que17" id="que17_d" value="option17_4">
+              <label class="form-check-label" for="que17_d">4. Satisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que17" id="que17_e" value="option17_5">
+              <label class="form-check-label" for="que17_e">5. Very Satisfied</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            18. How satisfied are you with your capacity for work?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que18" id="que18_a" value="option18_1">
+              <label class="form-check-label" for="que18_a">1. Very Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que18" id="que18_b" value="option18_2">
+              <label class="form-check-label" for="que18_b">2. Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que18" id="que18_c" value="option18_3">
+              <label class="form-check-label" for="que18_c">3. Neither Satisfied Not Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que18" id="que18_d" value="option18_4">
+              <label class="form-check-label" for="que18_d">4. Satisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que18" id="que18_e" value="option18_5">
+              <label class="form-check-label" for="que18_e">5. Very Satisfied</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            19. How satisfied are you with yourself?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que19" id="que19_a" value="option19_1">
+              <label class="form-check-label" for="que19_a">1. Very Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que19" id="que19_b" value="option19_2">
+              <label class="form-check-label" for="que19_b">2. Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que19" id="que19_c" value="option19_3">
+              <label class="form-check-label" for="que19_c">3. Neither Satisfied Not Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que19" id="que19_d" value="option19_4">
+              <label class="form-check-label" for="que19_d">4. Satisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que19" id="que19_e" value="option19_5">
+              <label class="form-check-label" for="que19_e">5. Very Satisfied</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            20. How satisfied are you with your sex life?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que20" id="que20_a" value="option20_1">
+              <label class="form-check-label" for="que20_a">1. Very Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que20" id="que20_b" value="option20_2">
+              <label class="form-check-label" for="que20_b">2. Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que20" id="que20_c" value="option20_3">
+              <label class="form-check-label" for="que20_c">3. Neither Satisfied Not Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que20" id="que20_d" value="option20_4">
+              <label class="form-check-label" for="que20_d">4. Satisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que20" id="que20_e" value="option20_5">
+              <label class="form-check-label" for="que20_e">5. Very Satisfied</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            21. How satisfied are you with your personal relationships?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que21" id="que21_a" value="option21_1">
+              <label class="form-check-label" for="que21_a">1. Very Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que21" id="que21_b" value="option21_2">
+              <label class="form-check-label" for="que21_b">2. Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que21" id="que21_c" value="option21_3">
+              <label class="form-check-label" for="que21_c">3. Neither Satisfied Not Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que21" id="que21_d" value="option21_4">
+              <label class="form-check-label" for="que21_d">4. Satisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que21" id="que21_e" value="option21_5">
+              <label class="form-check-label" for="que21_e">5. Very Satisfied</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            22. How satisfied are you with the support you get from your friends?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que22" id="que22_a" value="option22_1">
+              <label class="form-check-label" for="que22_a">1. Very Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que22" id="que22_b" value="option22_2">
+              <label class="form-check-label" for="que22_b">2. Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que22" id="que22_c" value="option22_3">
+              <label class="form-check-label" for="que22_c">3. Neither Satisfied Not Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que22" id="que22_d" value="option22_4">
+              <label class="form-check-label" for="que22_d">4. Satisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que22" id="que22_e" value="option22_5">
+              <label class="form-check-label" for="que22_e">5. Very Satisfied</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            23. How satisfied are you with the conditions of your living place?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que23" id="que23_a" value="option23_1">
+              <label class="form-check-label" for="que23_a">1. Very Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que23" id="que23_b" value="option23_2">
+              <label class="form-check-label" for="que23_b">2. Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que23" id="que23_c" value="option23_3">
+              <label class="form-check-label" for="que23_c">3. Neither Satisfied Not Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que23" id="que23_d" value="option23_4">
+              <label class="form-check-label" for="que23_d">4. Satisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que23" id="que23_e" value="option23_5">
+              <label class="form-check-label" for="que23_e">5. Very Satisfied</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            24. How satisfied are you with your access to health services?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que24" id="que24_a" value="option24_1">
+              <label class="form-check-label" for="que24_a">1. Very Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que24" id="que24_b" value="option24_2">
+              <label class="form-check-label" for="que24_b">2. Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que24" id="que24_c" value="option24_3">
+              <label class="form-check-label" for="que24_c">3. Neither Satisfied Not Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que24" id="que24_d" value="option24_4">
+              <label class="form-check-label" for="que24_d">4. Satisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que24" id="que24_e" value="option24_5">
+              <label class="form-check-label" for="que24_e">5. Very Satisfied</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            25. How satisfied are you with your transport?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que25" id="que25_a" value="option25_1">
+              <label class="form-check-label" for="que25_a">1. Very Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que25" id="que25_b" value="option25_2">
+              <label class="form-check-label" for="que25_b">2. Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que25" id="que25_c" value="option25_3">
+              <label class="form-check-label" for="que25_c">3. Neither Satisfied Not Dissatisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que25" id="que25_d" value="option25_4">
+              <label class="form-check-label" for="que25_d">4. Satisfied</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que25" id="que25_e" value="option25_5">
+              <label class="form-check-label" for="que25_e">5. Very Satisfied</label>
+            </div>
+          </div>
+          <br><br>
+          <div class="text-lg ml3 sm:text-x6 text-gray-800 font-medium title-font mb-2">
+            26. How often do you have negative feelings such as blue mood, despair, anxiety, depression?
+          </div>
+          <div class="lg:w-full text-gray-600 mx-auto leading-relaxed text-base">
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que26" id="que26_a" value="option26_1">
+              <label class="form-check-label" for="que26_a">1. Never</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que26" id="que26_b" value="option26_2">
+              <label class="form-check-label" for="que16_b">2. Seldom</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que26" id="que26_c" value="option26_3">
+              <label class="form-check-label" for="que26_c">3. Quite often</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que26" id="que26_d" value="option26_4">
+              <label class="form-check-label" for="que26_d">4. Very Often</label>
+            </div>
+            <div class="form-check form-check-inline py-1 px-3">
+              <input class="form-check-input" type="radio" name="que26" id="que26_e" value="option26_5">
+              <label class="form-check-label" for="que26_e">5. Always</label>
+            </div>
+          </div>
+          <br><br>
+          <div>
+            <input href="/result1" type="submit" class="w-1/7 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          </div>
+        </form>
+      </div>
+      <br><br>
+  </section>
+
+
+    <footer class="text-gray-600 body-font">
+      <div class="container px-5 mx-auto">
+      </div>
+      <div class="bg-gray-300">
+        <div class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
+          <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="ml-3 text-xl">Depression Detection</span>
+          </a>
+          <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">© 2020 Depression Detection —
+            <a href="https://www.thelivelovelaughfoundation.org/find-help/helplines" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@thelivelovelaughfoundation</a>
+          </p>
+          <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+            <a class="text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>
